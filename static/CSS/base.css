@@ -7,26 +7,57 @@ ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    overflow: hidden;
     background-color: #b38a6b;
+    display: block;
 }
-
-li {
-    float: left;
+ul:after {
+    display: block;
+    float: none;
+    content: ' ';
+    clear: both;
 }
-
-li a.block {
+.anim {
+    position: relative;
+}
+a.block {
     display: block;
     color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
 }
-li a.block:hover {
+.block{
+}
+a.block:hover {
     background-color: #95500c;
     color: #fff;
 }
-.block{
+ul.ssubmenuu {
+    position: absolute;
+    width: 70px;
+    top: 52px;
+    left: 0px;
+    display: none;
+    background-color: white;
+}
+ul.ssubmenuu > li {
+    display: block;
+}
+ul.ssubmenuu > li > a {
+    display: block;
+    text-decoration: none;
+    padding: 10px;
+    color: white;
+    background-color: #b38a6b;
+}
+ul.ssubmenuu > li > a:hover {
+    background-color: #95500c;
+    text-decoration: none;
+    color: white;
+    text-align: right;
+}
+ul.mmenuu > li:hover > ul.ssubmenuu {
+    display: block;
 }
 #reg{
   position: relative;
@@ -57,19 +88,24 @@ li a.block:hover {
   background: #dac49d;
   cursor: pointer;
 }
-
 .but:focus {
   outline: none;
   box-shadow: 0 0 0 3px #f0e3d1;
 }
-footer {
- background: #b38a6b;
- display: block;
- height: 160px;
- left: 0;
- position: absolute;
- width: 100%;
+.text{
+color: black;
 }
-.footer_text{
-color: #fff;
+.main_text{
+text-align: center;
+text-indent: 20px;
+font-size: 20px;
+color: black;
+}
+.regist_log{
+text-align: left;
+text-indent: 20px;
+font-size: 20px;
+}
+#name {
+cursor: default;
 }
