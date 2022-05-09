@@ -3,26 +3,44 @@ body{
     font-family: Georgia;
     text-align: center;
 }
-ul {
+
+.text{                           /*заголовки*/
+color: black;
+}
+
+.main_text{                     /*основной текст*/
+text-align: center;
+text-indent: 20px;
+font-size: 20px;
+}
+
+.regist_log{                   /*текст на странице регистрации*/
+text-align: left;
+text-indent: 20px;
+font-size: 20px;
+}
+
+ul.mmenuu {                    /*главное меню*/
     list-style-type: none;
     margin: 0;
     padding: 0;
     background-color: #b38a6b;
     display: block;
 }
-ul:after {
+ul.mmenuu:after {
     display: block;
     float: none;
     content: ' ';
     clear: both;
 }
-.anim {
+
+.elem {                      /*элементы главного меню*/
     position: relative;
 }
-a.block {
+
+a.block {                    /*ссылки на статьи в главном меню*/
     display: block;
     color: white;
-    text-align: center;
     padding: 14px 16px;
     text-decoration: none;
 }
@@ -32,50 +50,8 @@ a.block:hover {
     background-color: #95500c;
     color: #fff;
 }
-ul.ssubmenuu {
-    position: absolute;
-    width: 70px;
-    top: 52px;
-    left: 0px;
-    display: none;
-    background-color: white;
-}
-ul.ssubmenuu > li {
-    display: block;
-}
-ul.ssubmenuu > li > a {
-    display: block;
-    text-decoration: none;
-    padding: 10px;
-    color: white;
-    background-color: #b38a6b;
-}
-ul.ssubmenuu > li > a:hover {
-    background-color: #95500c;
-    text-decoration: none;
-    color: white;
-    text-align: right;
-}
-ul.mmenuu > li:hover > ul.ssubmenuu {
-    display: block;
-}
-#reg{
-  position: relative;
-  top: 6px;
-  left: -10px;
-}
-#log{
-  position: relative;
-  top: 6px;
-  left: -20px;
-}
-.left{
-    float: left;
-}
-.right{
-    float: right;
-}
-.but{
+
+.but{                                  /*кнопки в главном меню*/
   appearance: none;
   border: 0;
   border-radius: 5px;
@@ -92,20 +68,165 @@ ul.mmenuu > li:hover > ul.ssubmenuu {
   outline: none;
   box-shadow: 0 0 0 3px #f0e3d1;
 }
-.text{
-color: black;
+
+#reg{                          /*размещение кнопок в главном меню*/
+  position: relative;
+  top: 6px;
+  left: -10px;
 }
-.main_text{
-text-align: center;
-text-indent: 20px;
-font-size: 20px;
-color: black;
+#log{
+  position: relative;
+  top: 6px;
+  left: -20px;
 }
-.regist_log{
-text-align: left;
-text-indent: 20px;
-font-size: 20px;
-}
-#name {
+
+#name {                         /*курсор при наведении на имя*/
 cursor: default;
+}
+
+ul.ssubmenuu {                /*побочное меню(кнопка выхода)*/
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    left: 0;
+    display: none;
+    background-color: white;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    z-index: 10;
+}
+
+ul.mmenuu > li:hover > ul.ssubmenuu {      /*появление побочного меню меню*/
+    display: block;
+}
+
+ul.ssubmenuu > li {                    /*элементы побочного меню меню*/
+    display:list-item;
+    list-style-type: none;
+
+}
+
+ul.ssubmenuu > li > a {               /*ссылки побочного меню меню*/
+    display: block;
+    text-decoration: none;
+    padding: 10px;
+    color: white;
+    background-color: #b38a6b;
+}
+ul.ssubmenuu > li > a:hover {
+    background-color: #95500c;
+    text-decoration: none;
+    color: white;
+    text-align: right;
+}
+
+.left{                         /*левое позиционирование объектов*/
+    float: left;
+}
+.right{                        /*правое позиционирование объектов*/
+    float: right;
+}
+.center {                       /*центральное позиционирование объектов*/
+float: center;
+}
+
+.link{               /*ссылки для перехода на статью о конкретном животном*/
+color: #42aaff;
+cursor: pointer;
+font-size: 20px;
+text-decoration: none;
+}
+.link:hover {
+color: #ffa500;
+}
+
+.items {                        /*элементы списка ссылок ведущих на статьи*/
+    list-style-type: none;
+}
+
+.acor-container {                  /*обертка для выдвижного меню*/
+    float: left;
+}
+
+.acor-body {                     /*подэлементы выдвижного меню*/
+    overflow: hidden;
+    height: 0;
+    width: 200px;
+}
+
+.acor-body a {                   /*ссылки выдвижного меню*/
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 20px 30px;
+    text-decoration: none;
+    background-color: #cbaf9a;
+}
+.acor-body a:hover {
+    background-color: #b8630f;
+    color: #fff;
+}
+.acor-container input:checked + label +.acor-body {
+    height: auto;
+}
+
+.acor-container label {             /*элементы выдвижного меню*/
+    cursor: pointer;
+    background-color: #b38a6b;
+    display: block;
+    padding: 15px 17px;
+    width: 200px;
+    color: #FFF;
+    font-weight: 300;
+    box-sizing: border-box;
+    margin: 0px;
+}
+.acor-container label:hover {
+  background-color: #95500c;
+    color: #fff;
+}
+.acor-container label:before {
+    content: '\276F';
+    float: right;
+}
+.acor-container input:checked + label {
+    background-color: #95500c;
+    color: #fff;
+}
+.acor-container input:checked + label:before {
+    transform: rotate(90deg);
+}
+
+.acor-container input{            /*открытие выдвижного меню*/
+    display: none;
+}
+
+.spis_text {
+    font-family: "Courier New";
+     color: #00b300;
+}
+
+ol li::marker {
+    color: black;
+}
+.butt{
+  appearance: none;
+  border: 0;
+  border-radius: 5px;
+  background: #ff5c77;
+  color: #fff;
+  padding: 6px 10px;
+  font-size: 17px;
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+.butt:hover {
+  background: #ff7087;
+  cursor: pointer;
+}
+.butt:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px #ffc2cc;
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
@@ -15,27 +15,27 @@
    <header>
      <img src="/static/images/Animals.png" width="100%">
        <ul class="mmenuu">
-         <li class="left anim"><a class="block" href="#">Кошки</a></li>
-         <li class="left anim"><a class="block" href="#">Собаки</a></li>
-         <li class="left anim"><a class="block" href="#">Рыбы</a></li>
-         <li class="left anim"><a class="block" href="#">Ящерецы</a></li>
-         <li class="left anim"><a class="block" href="#">Черепахи</a></li>
-         <li class="left anim"><a class="block" href="#">Мыши</a></li>
-         <li class="left anim"><a class="block" href="#">Хомяки</a></li>
+         <li class="left elem"><a class="block" href="/cat">Кошки</a></li>
+         <li class="left elem"><a class="block" href="#">Собаки</a></li>
+         <li class="left elem"><a class="block" href="#">Рыбы</a></li>
+         <li class="left elem"><a class="block" href="#">Ящерецы</a></li>
+         <li class="left elem"><a class="block" href="#">Черепахи</a></li>
+         <li class="left elem"><a class="block" href="#">Мыши</a></li>
+         <li class="left elem"><a class="block" href="#">Хомяки</a></li>
          {% if current_user.is_authenticated %}
-              <li class="right anim"><a id="name" class="block" href="#">{{ current_user.name }}</a>
+              <li class="right elem"><a id="name" class="block" href="#">{{ current_user.name }}</a>
                      <ul class="ssubmenuu">
                            <li><a href="/logout">Выйти</a></li>
                      </ul>
               </li>
-              <li class="right anim"><a class="block" href="#">Избраное</a></li>
+              <li class="right elem"><a class="block" href="#">Избраное</a></li>
          {% else %}
               <li class="right"><a href="/regist"><button class="but" id="reg">Зарегестрироваться</button></a></li>
               <li class="right"><a href="/login"><button class="but" id="log">Войти</button></a></li>
          {% endif %}
        </ul>
    </header>
-   <main role="main" class="container">
+   <main>
     {% block content %}{% endblock %}
    </main>
 </body>
