@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 <h1 class="text">Вход</h1>
-
+<p class="text main_text">{{message}}</p>
 <form action="" method="post">
     {{ form.hidden_tag() }}
     {{ form.csrf_token }}
@@ -32,8 +32,7 @@
     </div>
     {% endfor %}
     </p>
-    <p class="text">{{ form.remember_me() }} {{ form.remember_me.label }}</p>
+    <p class="text main_text">{{ form.remember_me() }} {{ form.remember_me.label }}</p>
     <p>{{ form.submit(type="submit", class="btn btn-primary") }}</p>
-    <p class="text">{{message}}</p>
 </form>
 {% endblock %}
