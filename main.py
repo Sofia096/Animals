@@ -1,4 +1,4 @@
-from flask import Flask, render_template, send_from_directory, redirect, session
+from flask import Flask, render_template, send_from_directory, redirect
 import os
 from data.reg_form import RegisterForm
 from data import db_session
